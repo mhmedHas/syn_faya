@@ -1,0 +1,86 @@
+import 'package:flutter/material.dart';
+import 'package:v1/helper/Constanat.dart';
+import 'package:v1/screens/HomeScreen.dart';
+import 'package:v1/screens/loginPage.dart';
+
+import '../generated/l10n.dart';
+
+class splash1 extends StatefulWidget {
+  const splash1({super.key});
+
+  @override
+  _HomeState createState() => _HomeState();
+}
+
+class _HomeState extends State<splash1> {
+  @override
+  void initState() {
+    super.initState();
+    // Add a delay to simulate a splash screen
+    Future.delayed(const Duration(seconds: 1), () {
+      // Navigate to the main page after the delay
+      Navigator.of(context).pushReplacement(
+        MaterialPageRoute(builder: (context) => LOGIN()),
+      );
+    });
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      backgroundColor: primary,
+      body: GestureDetector(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            // SizedBox(height: 200),
+            Spacer(flex: 4),
+            Center(
+              child: Text(
+                S.of(context).app_name,
+                style: TextStyle(
+                    color: Color.fromARGB(255, 0, 0, 0),
+                    fontSize: 30,
+                    fontWeight: FontWeight.w900),
+              ),
+            ),
+            Spacer(flex: 1),
+            Center(
+              child: Container(
+                  height: 200,
+                  width: 300,
+                  child: Image.asset("assets/images/00-removebg-preview.png")),
+            ),
+            Spacer(flex: 2),
+
+            // Text(
+            //   ' Eng.Mohamed Ibrahim ',
+            //   style: TextStyle(
+            //     fontSize: 22,
+            //     color: Colors.white,
+            //     fontWeight: FontWeight.bold,
+            //   ),
+            // ),
+            Spacer(flex: 1),
+
+            // Add the footer content here
+            Spacer(flex: 2),
+            // This will add "CodeCrafter" in the center
+            Text(
+              'CodeCrafters',
+              style: TextStyle(
+                fontSize: 18,
+                fontWeight: FontWeight.bold,
+                color: Colors.black,
+              ),
+            ),
+            Spacer(
+              flex: 1,
+            )
+            // This will add the phone numbers at the bottom left and right
+          ],
+        ),
+      ),
+    );
+  }
+}
