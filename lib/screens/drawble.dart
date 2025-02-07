@@ -4,6 +4,7 @@ import 'package:v1/api_model/profileData.dart';
 import 'package:v1/helper/darkmode.dart';
 import 'package:v1/models/profile_data.dart';
 import 'package:v1/screens/HomeScreen.dart';
+import 'package:v1/screens/driver.dart';
 import 'package:v1/screens/loginPage.dart';
 import 'package:v1/screens/map.dart';
 import 'package:v1/screens/order.dart';
@@ -77,8 +78,7 @@ class _CustomDrawerState extends State<CustomDrawer> {
                       ),
                       onTap: () => Navigator.push(
                         context,
-                        MaterialPageRoute(
-                            builder: (context) => const HomeScreen()),
+                        MaterialPageRoute(builder: (context) => const Driver()),
                       ),
                     ),
                     decoration: BoxDecoration(
