@@ -59,6 +59,14 @@
            "statePay":"status Pay ",
            "api":"end point",
            "privacy":"privacy policy",
-           "remember_me":"remember me"
-
-        }
+           "remember_me":"remember me",
+           
+           "orederNOT":"New Notification",
+           "orderBody":"New order has been added"  ,
+           "showw":"Show Receipt"
+  
+          
+          
+          
+          
+          }

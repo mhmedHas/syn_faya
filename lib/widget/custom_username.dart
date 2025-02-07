@@ -4,7 +4,7 @@ import '../generated/l10n.dart';
 
 class Emailtextfield extends StatelessWidget {
   const Emailtextfield(
-      {required this.hint, this.onEmail, String? initialValue});
+      {super.key, required this.hint, this.onEmail, String? initialValue});
   final String hint;
   final Function(String)? onEmail;
 
@@ -15,10 +15,11 @@ class Emailtextfield extends StatelessWidget {
         if (value!.isEmpty) {
           return S.of(context).enteremail;
         }
+        return null;
       },
       onChanged: onEmail,
-      style: TextStyle(
-        color: const Color.fromARGB(255, 0, 0, 0),
+      style: const TextStyle(
+        color: Color.fromARGB(255, 0, 0, 0),
       ),
       decoration: InputDecoration(
         hintText: hint,

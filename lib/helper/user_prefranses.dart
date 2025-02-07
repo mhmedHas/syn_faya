@@ -8,6 +8,5 @@ class UserPreferences {
     email: 'billgets_@gmail.com',
     about:
         "Safe Driroadving: Following safety and traffic rules to ensure everyone's safety on the .",
-    isDarkMode: false,
   );
 }

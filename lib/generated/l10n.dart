@@ -639,6 +639,36 @@ class S {
       args: [],
     );
   }
+
+  /// `New Notification`
+  String get orederNOT {
+    return Intl.message(
+      'New Notification',
+      name: 'orederNOT',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `New order has been added`
+  String get orderBody {
+    return Intl.message(
+      'New order has been added',
+      name: 'orderBody',
+      desc: '',
+      args: [],
+    );
+  }
+
+  /// `Show Receipt`
+  String get showw {
+    return Intl.message(
+      'Show Receipt',
+      name: 'showw',
+      desc: '',
+      args: [],
+    );
+  }
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {

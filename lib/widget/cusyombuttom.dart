@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
 class Custombutton extends StatelessWidget {
-  const Custombutton({required this.button, this.click});
+  const Custombutton({super.key, required this.button, this.click});
   final button;
   final VoidCallback? click;
 

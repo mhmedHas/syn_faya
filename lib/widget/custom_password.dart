@@ -4,7 +4,7 @@ import '../generated/l10n.dart';
 
 class passwordtextfield extends StatefulWidget {
   const passwordtextfield(
-      {required this.hint, this.onpassword, String? initialValue});
+      {super.key, required this.hint, this.onpassword, String? initialValue});
 
   final Function(String)? onpassword;
   final String hint;
@@ -29,10 +29,11 @@ class _passwordtextfieldState extends State<passwordtextfield> {
         if (value!.isEmpty) {
           return S.of(context).enterpassword;
         }
+        return null;
       },
       onChanged: widget.onpassword,
-      style: TextStyle(
-        color: const Color.fromARGB(255, 0, 0, 0),
+      style: const TextStyle(
+        color: Color.fromARGB(255, 0, 0, 0),
       ),
       obscureText: isTrue,
       decoration: InputDecoration(

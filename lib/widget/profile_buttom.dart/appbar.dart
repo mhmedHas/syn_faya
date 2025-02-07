@@ -7,12 +7,12 @@ import 'package:flutter/material.dart';
 import '../../generated/l10n.dart';
 
 PreferredSize buildAppBar(BuildContext context) {
-  final icon = CupertinoIcons.moon_stars;
+  const icon = CupertinoIcons.moon_stars;
 
   return PreferredSize(
-    preferredSize: Size.fromHeight(120), // Set the height here
+    preferredSize: const Size.fromHeight(120), // Set the height here
     child: ClipRRect(
-      borderRadius: BorderRadius.only(
+      borderRadius: const BorderRadius.only(
         bottomLeft: Radius.circular(30), // Adjust the corner radius as needed
         bottomRight: Radius.circular(30),
       ),
@@ -20,9 +20,9 @@ PreferredSize buildAppBar(BuildContext context) {
         centerTitle: true,
         title: Text(
           S.of(context).profile_nav,
-          style: TextStyle(fontSize: 30, fontWeight: FontWeight.w700),
+          style: const TextStyle(fontSize: 30, fontWeight: FontWeight.w700),
         ),
-        leading: BackButton(),
+        leading: const BackButton(),
         backgroundColor: Colors.transparent,
         elevation: 0,
         actions: [

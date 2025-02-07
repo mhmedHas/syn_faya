@@ -450,6 +450,7 @@ class CustomNavBar extends StatelessWidget {
   final bool more;
 
   const CustomNavBar({
+    super.key,
     this.home = false,
     this.details = false,
     this.order = false,
@@ -467,9 +468,9 @@ class CustomNavBar extends StatelessWidget {
           Align(
             alignment: Alignment.bottomCenter,
             child: ClipShadow(
-              boxShadow: [
+              boxShadow: const [
                 BoxShadow(
-                  color: const Color.fromARGB(255, 209, 199, 199),
+                  color: Color.fromARGB(255, 209, 199, 199),
                   offset: Offset(0, 0),
                   blurRadius: 10,
                 ),
@@ -499,12 +500,12 @@ class CustomNavBar extends StatelessWidget {
                       onTap: () {
                         if (!details) {
                           Navigator.of(context).push(
-                            MaterialPageRoute(builder: (_) => Map_page()),
+                            MaterialPageRoute(builder: (_) => const MapPage()),
                           );
                         }
                       },
                     ),
-                    Spacer(), // مسافة لتوسيط الزر الرئيسي
+                    const Spacer(), // مسافة لتوسيط الزر الرئيسي
                     _buildNavItem(
                       context,
                       isActive: profile,
@@ -515,7 +516,7 @@ class CustomNavBar extends StatelessWidget {
                           Navigator.of(context).pop();
 
                           Navigator.of(context).push(
-                            MaterialPageRoute(builder: (_) => Driver()),
+                            MaterialPageRoute(builder: (_) => const Driver()),
                           );
                         }
                       },
@@ -584,7 +585,7 @@ class CustomNavBar extends StatelessWidget {
             Icon(icon, size: 30, color: Colors.black), // اللون الأسود ثابت
             Text(
               label,
-              style: TextStyle(color: Colors.black), // اللون الأسود ثابت
+              style: const TextStyle(color: Colors.black), // اللون الأسود ثابت
             ),
           ],
         ),

@@ -34,24 +34,24 @@ class _HomeState extends State<SplashScreen> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             // SizedBox(height: 200),
-            Spacer(flex: 4),
+            const Spacer(flex: 4),
             Center(
               child: Text(
                 S.of(context).app_name,
-                style: TextStyle(
+                style: const TextStyle(
                     color: Color.fromARGB(255, 0, 0, 0),
                     fontSize: 30,
                     fontWeight: FontWeight.w900),
               ),
             ),
-            Spacer(flex: 1),
+            const Spacer(flex: 1),
             Center(
-              child: Container(
+              child: SizedBox(
                   height: 200,
                   width: 300,
                   child: Image.asset("assets/images/00-removebg-preview.png")),
             ),
-            Spacer(flex: 2),
+            const Spacer(flex: 2),
 
             // Text(
             //   ' Eng.Mohamed Ibrahim ',
@@ -61,12 +61,12 @@ class _HomeState extends State<SplashScreen> {
             //     fontWeight: FontWeight.bold,
             //   ),
             // ),
-            Spacer(flex: 1),
+            const Spacer(flex: 1),
 
             // Add the footer content here
-            Spacer(flex: 2),
+            const Spacer(flex: 2),
             // This will add "CodeCrafter" in the center
-            Text(
+            const Text(
               'CodeCrafters',
               style: TextStyle(
                 fontSize: 18,
@@ -74,7 +74,7 @@ class _HomeState extends State<SplashScreen> {
                 color: Colors.black,
               ),
             ),
-            Spacer(
+            const Spacer(
               flex: 1,
             )
             // This will add the phone numbers at the bottom left and right

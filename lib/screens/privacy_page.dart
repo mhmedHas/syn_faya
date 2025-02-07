@@ -11,14 +11,15 @@ class PrivacyPage extends StatelessWidget {
       appBar: AppBar(
         title: Text(
           S.of(context).privacy,
-          style: TextStyle(fontSize: 30, fontWeight: FontWeight.w700),
+          style: const TextStyle(fontSize: 30, fontWeight: FontWeight.w700),
         ),
         centerTitle: true,
         backgroundColor: primary, // Color of the appBar
         automaticallyImplyLeading:
             false, // This hides the default hamburger icon
         leading: IconButton(
-          icon: Icon(Icons.arrow_back, color: Colors.white), // Back arrow icon
+          icon: const Icon(Icons.arrow_back,
+              color: Colors.white), // Back arrow icon
           onPressed: () {
             // Navigator.of(context).push(MaterialPageRoute(
             //     builder: (context) =>
