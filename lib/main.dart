@@ -1,3 +1,4 @@
+import 'package:device_preview/device_preview.dart'; // استيراد device_preview
 import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
@@ -16,23 +17,28 @@ void main() async {
   await Firebase.initializeApp(
     options: DefaultFirebaseOptions.currentPlatform,
   );
+
   runApp(
-    ScreenUtilInit(
-      designSize: const Size(375, 812), // أبعاد التصميم الأصلية (عرض x ارتفاع)
-      minTextAdapt: true, // تمكين تكيف النص
-      splitScreenMode: true, // تمكين وضع الشاشة المقسمة
-      builder: (context, child) {
-        return MultiProvider(
-          providers: [
-            ChangeNotifierProvider(
-                create: (_) => ThemeProvider()), // ThemeProvider
-            ChangeNotifierProvider(
-                create: (_) => SwitchProvider()), // SwitchProvider
-            ChangeNotifierProvider(create: (_) => UserModel()), // UserModel
-          ],
-          child: const MyApp(), // تشغيل التطبيق
-        );
-      },
+    DevicePreview(
+      enabled: true, // تمكين device_preview
+      builder: (context) => ScreenUtilInit(
+        designSize:
+            const Size(375, 812), // أبعاد التصميم الأصلية (عرض x ارتفاع)
+        minTextAdapt: true, // تمكين تكيف النص
+        splitScreenMode: true, // تمكين وضع الشاشة المقسمة
+        builder: (context, child) {
+          return MultiProvider(
+            providers: [
+              ChangeNotifierProvider(
+                  create: (_) => ThemeProvider()), // ThemeProvider
+              ChangeNotifierProvider(
+                  create: (_) => SwitchProvider()), // SwitchProvider
+              ChangeNotifierProvider(create: (_) => UserModel()), // UserModel
+            ],
+            child: const MyApp(), // تشغيل التطبيق
+          );
+        },
+      ),
     ),
   );
 }
@@ -54,7 +60,8 @@ class MyApp extends StatelessWidget {
               child: child!,
             );
           },
-          locale: themeProvider.locale,
+          locale:
+              DevicePreview.locale(context), // استخدام locale من device_preview
           localizationsDelegates: const [
             S.delegate,
             GlobalMaterialLocalizations.delegate,
